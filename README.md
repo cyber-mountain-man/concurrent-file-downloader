@@ -11,8 +11,8 @@ Each version builds upon the previous one, introducing new features like progres
 | Version | Folder | Description |
 |---------|--------|-------------|
 | ✅ v1 | [`v1-basic-downloader`](./v1-basic-downloader) | Download multiple files concurrently using `goroutines` and `sync.WaitGroup` |
-| ⏳ v2 | *(Coming Soon)* | Add real-time download progress bars using a third-party library |
-| 🧵 v3 | *(Coming Soon)* | Implement a worker pool to control concurrency levels |
+| ✅ v2 | [`v2-progress-bar`](./v2-progress-bar)         | Adds real-time progress bars using `github.com/schollz/progressbar/v3` |
+| ⏳ v3 | *(Coming Soon)* | Implement a worker pool to control concurrency levels |
 | 🔐 v4 | *(Coming Soon)* | Add SHA256 checksum verification and retry logic |
 
 ---
@@ -31,6 +31,7 @@ Each version builds upon the previous one, introducing new features like progres
 - HTTP client usage
 - File I/O
 - Error handling
+- External Go modules
 - Real-world concurrency modeling
 
 ---
@@ -39,15 +40,18 @@ Each version builds upon the previous one, introducing new features like progres
 
 ```
 concurrent-file-downloader/
-├── v1-basic-downloader/      # Basic concurrent file downloading
-│   └── main.go
-├── v2-progress-bar/          # Adds visual feedback (TBD)
-├── v3-worker-pool/           # Limits number of concurrent downloads (TBD)
-├── v4-checksum-verification/ # Adds file integrity check (TBD)
-└── README.md                 # This file
+├── v1-basic-downloader/         # Basic concurrent file downloading
+│   ├── main.go
+│   └── README.md
+├── v2-progress-bar/             # Adds progress bars to concurrent downloads
+│   ├── main.go
+│   ├── go.mod
+│   ├── go.sum
+│   └── README.md
+├── v3-worker-pool/              # Controls max concurrent downloads (TBD)
+├── v4-checksum-verification/   # Adds file integrity check and retries (TBD)
+└── README.md                    # This file
 ```
-
-
 ---
 
 ## 🔍 Why This Project Exists
@@ -71,3 +75,4 @@ MIT – Free to use, modify, or contribute.
 ---
 
 *Want to follow along as we build each version? Star the repo and check back weekly!*
+```
