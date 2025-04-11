@@ -12,8 +12,8 @@ Each version builds upon the previous one, introducing new features like progres
 |---------|--------|-------------|
 | ✅ v1 | [`v1-basic-downloader`](./v1-basic-downloader) | Download multiple files concurrently using `goroutines` and `sync.WaitGroup` |
 | ✅ v2 | [`v2-progress-bar`](./v2-progress-bar)         | Adds real-time progress bars using `github.com/schollz/progressbar/v3` |
-| ⏳ v3 | *(Coming Soon)* | Implement a worker pool to control concurrency levels |
-| 🔐 v4 | *(Coming Soon)* | Add SHA256 checksum verification and retry logic |
+| ✅ v3 | [`v3-worker-pool`](./v3-worker-pool)           | Adds concurrency control using a worker pool and job queue |
+| ✅ v4 | [`v4-checksum-verification`](./v4-checksum-verification) | Adds SHA256 checksum validation and retry logic for download failures |
 
 ---
 
@@ -28,9 +28,11 @@ Each version builds upon the previous one, introducing new features like progres
 
 - Goroutines
 - WaitGroups
+- Channels
 - HTTP client usage
 - File I/O
-- Error handling
+- Hashing and data integrity (SHA256)
+- Retry logic and error handling
 - External Go modules
 - Real-world concurrency modeling
 
